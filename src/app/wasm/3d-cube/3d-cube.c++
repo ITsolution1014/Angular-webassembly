@@ -78,31 +78,7 @@ std::string base64_decode(std::string const& encoded_string) {
 void Cube(void) {
 	glBegin(GL_QUADS);
 
-    // glTexCoord2i(0, 0); glVertex3f(-1, -1, -1);
-	// glTexCoord2i(0, 1); glVertex3f(-1, -1, 1);
-	// glTexCoord2i(1, 1); glVertex3f(-1, 1, 1);
-	// glTexCoord2i(1, 0); glVertex3f(-1, 1, -1);
-
-	// glTexCoord2i(0, 0); glVertex3f(1, -1, -1);
-	// glTexCoord2i(0, 1); glVertex3f(1, -1, 1);
-	// glTexCoord2i(1, 1); glVertex3f(1, 1, 1);
-	// glTexCoord2i(1, 0); glVertex3f(1, 1, -1);
-
-	// glTexCoord2i(0, 0); glVertex3f(-1, -1, -1);
-	// glTexCoord2i(0, 1); glVertex3f(-1, -1, 1);
-	// glTexCoord2i(1, 1); glVertex3f(1, -1, 1);
-	// glTexCoord2i(1, 0); glVertex3f(1, -1, -1);
-
-	// glTexCoord2i(0, 0); glVertex3f(-1, 1, -1);
-	// glTexCoord2i(0, 1); glVertex3f(-1, 1, 1);
-	// glTexCoord2i(1, 1); glVertex3f(1, 1, 1);
-	// glTexCoord2i(1, 0); glVertex3f(1, 1, -1);
-
-	// glTexCoord2i(0, 0); glVertex3f(-1, -1, -1);
-	// glTexCoord2i(0, 1); glVertex3f(-1, 1, -1);
-	// glTexCoord2i(1, 1); glVertex3f(1, 1, -1);
-	// glTexCoord2i(1, 0); glVertex3f(1, -1, -1);
-
+ 
 	glTexCoord2i(0, 0); glVertex3f(-1, 1, 1);
 	glTexCoord2i(0, 1); glVertex3f(-1, -1, 1);
 	glTexCoord2i(1, 1); glVertex3f(1, -1, 1);
@@ -119,8 +95,7 @@ void DisplayFunc(void) {
 
 	glLoadIdentity();
 	glTranslatef(0, 0, -10);
-	// glRotatef(30, 1, 0, 0);
-	// glRotatef(alpha, 0, 1, 0);
+	
 
 	/* Define a view-port adapted to the texture */
 	glMatrixMode(GL_PROJECTION);
@@ -203,7 +178,7 @@ void set_texture(const char* fileName) {
 	int texture_width, texture_height,nrChannels;
 	
 	unsigned char* texture = SOIL_load_image("test.png", &texture_width, &texture_height, 0, SOIL_LOAD_RGB);
-	// unsigned char *data = stbi_load(&texels[0], &texture_width, &texture_height, &nrChannels, 0);
+
 	 
 	 
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 72, 72, 0, GL_RGB, GL_UNSIGNED_BYTE, texture);
