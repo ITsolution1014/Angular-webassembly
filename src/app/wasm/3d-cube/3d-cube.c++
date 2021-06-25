@@ -138,20 +138,6 @@ void ReshapeFunc(int width, int height) {
 	glutPostRedisplay();
 }
 
-#ifndef __EMSCRIPTEN__
-
-/*
-** Function called when a key is hit
-*/
-void KeyboardFunc(unsigned char key, int x, int y) {
-	int foo;
-
-	foo = x + y; /* Has no effect: just to avoid a warning */
-	if ('q' == key || 'Q' == key || 27 == key)
-		exit(0);
-}
-
-#endif // !__EMSCRIPTEN__
 
 
 
@@ -217,10 +203,8 @@ int main(int argc, char **argv) {
 
 	/* Declaration of the callbacks */
 	glutDisplayFunc(&DisplayFunc);
-	// glutReshapeFunc(&ReshapeFunc);
-#ifndef __EMSCRIPTEN__
-	// glutKeyboardFunc(&KeyboardFunc);
-#endif // !__EMSCRIPTEN__
+
+
 
 	/* Loop */
 	glutMainLoop();
